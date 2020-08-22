@@ -1,0 +1,167 @@
+@import "./reset.css";
+
+.contain{
+    width:100%;
+    height:600px;
+    background: url('../images/sky.png');
+    background-position-x: 0;
+    position:relative;
+}
+.start{
+    width:100%;
+    height:100%;
+    position:relative;
+    top:0;
+    left:0;
+    text-align:center;
+    /* display: none; */
+}
+.start .bird{
+    width:30px;
+    height:30px;
+    background:url('../images/birds.png');
+    background-position:0;
+    position:absolute;
+    top:235px;
+    left:50%;
+    transform:translateX(-50%);
+    transition:top .3s linear;
+    /* animation:birdFly .3s steps(1,start) infinite; */
+}
+@keyframes birdFly{
+    0%{
+        background-position:0 0;
+        top:220px;
+    }
+    50%{
+        background-position:-30px 0;
+    }
+    100%{
+        background-position:-60px 0;
+        top:260px;
+    }
+}
+.start .start-game{
+    width:200px;
+    height:60px;
+    line-height:60px;
+    color:#fff;
+    font-size:24px;
+    text-align:center;
+    position:absolute;
+    top:295px;
+    left:50%;
+    transform:translateX(-50%);
+    font-weight:bolder;
+    transition:all .3s linear;
+    /* animation:wordScale 1s linear alternate infinite; */
+}
+@keyframes wordScale{
+    from{
+        color:#fff;
+        font-size:24px;
+    }
+    to{
+        color:#09f;
+        font-size:36px;
+    }
+}
+.start-game.big{
+    color:#09f;
+    font-size:36px;
+}
+.start-game.small{
+    color:#fff;
+    font-size:24px;
+}
+.game-score{
+    position: absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:20px;
+    color:#fff;
+    font-weight:bolder;
+    display: none;
+    z-index: 1;
+}
+.mask{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,.7);
+    text-align:center;
+    display:none;
+    z-index:1;
+}
+.mask .over{
+    margin-top:70px;
+    font-size:36px;
+    font-weight:bolder;
+    color:red;
+}
+.mask .result,
+.mask .score{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:#ff0;
+}
+.mask .ranking-list{
+    margin-top:20px;
+    color:#09f;
+}
+.ranking-list li{
+    height:30px;
+    line-height:30px;
+    margin-bottom:10px;
+    font-size:12px;
+    user-select:none;
+}
+.ranking-item .ranking-number{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    line-height:14px;
+    background:#8eb9f5;
+    margin-right:10px;
+}
+.ranking-number.first{
+    background:#f54545;
+}
+.ranking-number.second{
+    background:#ff8547;
+}
+.ranking-number.third{
+    background:#ffac38;
+}
+.ranking-item .ranking-score{
+    display:inline-block;
+    width:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.mask .restart{
+    font-size:18px;
+    font-weight:bolder;
+    color:#09f;
+    cursor:pointer;
+}
+.pipe{
+    width:52px;
+    position: absolute;
+}
+.pipe.pipeUp{
+    background:url('../images/pipe2.png');
+    background-position: bottom;
+    top:0;
+}
+.pipe.pipeDown{
+    background:url('../images/pipe1.png');
+    background-position: top;
+    bottom:0;
+}
